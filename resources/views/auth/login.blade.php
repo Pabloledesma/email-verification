@@ -1,16 +1,12 @@
 @extends('app')
 
 @section('content')
-	
-	<h1>Register</h1>
-		<form method="post" action="/register">
+
+		<h1>Login</h1>
+		@include('error')
+		<form method="post" action="/login">
 
 			{!! csrf_field() !!}
-
-			<div class="form-group">
-				<label for="name">Name:</label>
-				<input type="text" name="name" id="name" class="form-control" value="{{ old('name') }}">
-			</div>
 
 			<div class="form-group">
 				<label for="email">Email:</label>
@@ -23,8 +19,9 @@
 			</div>
 
 			<div class="form-group">
-				<button type="submit" class="btn btn-default">Register</button>
+				<button type="submit" class="btn btn-default">Sign In</button>
 			</div>
 		</form>
+
 
 @stop

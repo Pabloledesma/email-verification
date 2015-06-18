@@ -24,7 +24,7 @@ class AuthTest extends TestCase
 
         $user = User::whereName('JhonDoe')->first();
 
-        //$this->login($user)->see('Could not sign you in.');
+        $this->login($user)->see('Could not sign you in.');
 
         $this->visit("register/confirm/{$user->token}")
           ->see('You are now confirmed. Please Login')
@@ -36,7 +36,7 @@ class AuthTest extends TestCase
    function a_user_may_login()
    {
       $this->login()
-        ->see('You are login.');
+        ->see('Lesson complete. Good job!')->onPage('dashboard');
    }
 
    protected function login($user = null)
